@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Leaf from "@/components/Leaf";
@@ -36,7 +37,7 @@ const Footer = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Serviços</h3>
+              <h3 className="text-lg font-semibold mb-4 font-helvetica">Serviços</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="text-white/70 hover:text-white">Websites</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white">Automação</a></li>
@@ -46,7 +47,7 @@ const Footer = () => {
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">Empresa</h3>
+              <h3 className="text-lg font-semibold mb-4 font-helvetica">Empresa</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="text-white/70 hover:text-white">Sobre nós</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white">Clientes</a></li>
@@ -56,7 +57,7 @@ const Footer = () => {
             </div>
             
             <div className="col-span-2 md:col-span-1">
-              <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+              <h3 className="text-lg font-semibold mb-4 font-helvetica">Newsletter</h3>
               <p className="text-white/70 mb-4">Receba novidades sobre marketing seu negócio</p>
               <div className="flex space-x-2">
                 <Input type="email" placeholder="Seu email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />

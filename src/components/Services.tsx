@@ -48,7 +48,7 @@ const Services = () => {
   return <section id="servicos" className="py-16 md:py-24 bg-maranja-cream">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-4 font-helvetica">
             Nossos Serviços
           </h2>
           <p className="text-maranja-darkblue/70 max-w-2xl mx-auto text-lg">Soluções completas para impulsionar seu negócio com tecnologias modernas e processos eficientes.</p>
