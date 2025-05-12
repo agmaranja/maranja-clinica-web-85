@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
 const Hero = () => {
@@ -62,7 +63,7 @@ const Hero = () => {
         <div className="mt-16 md:mt-24 text-center relative">
           <Leaf position="bottom-left" size={32} rotation={-30} opacity={0.2} leafType="ipe" className="absolute bottom-0 left-10" />
           
-          <p className="text-sm uppercase tracking-wider text-maranja-darkblue/60 mb-6">CONFIADO POR DIVERSOS CLIENTES</p>
+          <p className="text-sm uppercase tracking-wider text-maranja-darkblue/60 mb-6">CONFIADO POR DIVERSAS EMPRESAS</p>
           
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {/* Aqui entrariam logos de clientes - usando placeholders */}

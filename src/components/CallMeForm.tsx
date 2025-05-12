@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -59,9 +60,9 @@ const CallMeForm = () => {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-4">
-              Ligue para mim
+              Fale Conosco
             </h2>
-            <p className="text-maranja-darkblue/70 max-w-xl mx-auto">Preencha o formulário abaixo e entraremos em contato para discutir como podemos ajudar a sua empresa.</p>
+            <p className="text-maranja-darkblue/70 max-w-xl mx-auto">Preencha o formulário abaixo e entraremos em contato para discutir como podemos ajudar o seu negócio.</p>
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6 md:p-8 relative">
@@ -95,7 +96,7 @@ const CallMeForm = () => {
                   <Label htmlFor="mensagem" className="text-maranja-darkblue">
                     Mensagem (opcional)
                   </Label>
-                  <Textarea id="mensagem" name="mensagem" value={formData.mensagem} onChange={handleChange} placeholder="Como podemos ajudar a sua clínica?" className="min-h-[120px] border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Textarea id="mensagem" name="mensagem" value={formData.mensagem} onChange={handleChange} placeholder="Como podemos ajudar o seu negócio?" className="min-h-[120px] border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
                 </div>
               </div>
               
