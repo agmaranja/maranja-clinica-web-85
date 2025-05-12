@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
-
 const Hero = () => {
-  return (
-    <section id="inicio" className="relative py-16 md:py-24 bg-maranja-background overflow-hidden">
+  return <section id="inicio" className="relative py-16 md:py-24 bg-maranja-background overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(29,45,53,0.4),transparent)]"></div>
       </div>
@@ -21,7 +18,7 @@ const Hero = () => {
         <h2 className="text-4xl md:text-6xl font-bold text-maranja-darkblue font-lato tracking-wider">
           <span className="relative inline-block">
             Maranjá
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-maranja-darkblue/20 via-maranja-darkblue to-maranja-darkblue/20 transform -translate-y-2"></span>
+            
           </span>
         </h2>
       </div>
@@ -75,8 +72,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
