@@ -78,7 +78,8 @@ export default {
 			fontFamily: {
 				sans: ['Montserrat', 'sans-serif'],
 				heading: ['Cormorant Garamond', 'serif'],
-				lato: ['Lato', 'sans-serif']
+				lato: ['Lato', 'sans-serif'],
+				helvetica: ['Helvetica', 'Arial', 'sans-serif']
 			},
 			keyframes: {
 				'accordion-down': {

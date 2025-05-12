@@ -60,7 +60,7 @@ const Services = () => {
                 <div className="w-12 h-12 bg-maranja-beige rounded-full flex items-center justify-center mb-4 text-maranja-darkblue">
                   {service.icon}
                 </div>
-                <CardTitle className="text-maranja-darkblue text-xl">{service.title}</CardTitle>
+                <CardTitle className="text-maranja-darkblue text-xl font-helvetica">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="">
