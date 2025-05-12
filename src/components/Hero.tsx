@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
 const Hero = () => {
@@ -13,16 +14,21 @@ const Hero = () => {
       <Leaf position="bottom-left" size={32} rotation={-22} opacity={0.2} leafType="guarana" className="hidden lg:block" />
       <Leaf position="center-right" size={24} rotation={18} opacity={0.25} leafType="araucaria" className="hidden xl:block" />
       
+      {/* Agency Name */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-maranja-darkblue">Maranjá</h2>
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-maranja-darkblue">
-              Marketing e automação para <span className="text-transparent bg-clip-text bg-gradient-to-r from-maranja-darkblue to-maranja-darkblue/70"></span>
+              Marketing e automação para <span className="text-transparent bg-clip-text bg-gradient-to-r from-maranja-darkblue to-maranja-darkblue/70">negócios</span>
             </h1>
             
             <p className="text-lg md:text-xl text-maranja-darkblue/80 mb-8 max-w-lg">
-              Potencialize sua clínica com soluções completas de marketing e automação. 
-              Atraia mais pacientes e ofereça uma experiência superior.
+              Potencialize sua empresa com soluções completas de marketing e automação. 
+              Atraia mais clientes e ofereça uma experiência superior.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
