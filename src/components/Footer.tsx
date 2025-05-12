@@ -1,65 +1,20 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Leaf from "@/components/Leaf";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer id="contato" className="bg-maranja-darkblue text-white py-12 md:py-16 relative">
-      <Leaf 
-        position="top-right" 
-        size={40} 
-        rotation={20} 
-        opacity={0.1}
-        leafType="ipe"
-        className="text-white" 
-      />
-      <Leaf 
-        position="bottom-left" 
-        size={32} 
-        rotation={-15} 
-        opacity={0.1}
-        leafType="acai"
-        className="text-white" 
-      />
-      <Leaf 
-        position="center-left" 
-        size={26} 
-        rotation={45} 
-        opacity={0.08}
-        leafType="jatoba"
-        className="text-white hidden md:block" 
-      />
-      <Leaf 
-        position="bottom-right" 
-        size={24} 
-        rotation={10} 
-        opacity={0.12}
-        leafType="guarana"
-        className="text-white hidden lg:block" 
-      />
-      <Leaf 
-        position="top-left" 
-        size={28} 
-        rotation={-25} 
-        opacity={0.1}
-        leafType="araucaria"
-        className="text-white hidden xl:block" 
-      />
+  return <footer id="contato" className="bg-maranja-darkblue text-white py-12 md:py-16 relative">
+      <Leaf position="top-right" size={40} rotation={20} opacity={0.1} leafType="ipe" className="text-white" />
+      <Leaf position="bottom-left" size={32} rotation={-15} opacity={0.1} leafType="acai" className="text-white" />
+      <Leaf position="center-left" size={26} rotation={45} opacity={0.08} leafType="jatoba" className="text-white hidden md:block" />
+      <Leaf position="bottom-right" size={24} rotation={10} opacity={0.12} leafType="guarana" className="text-white hidden lg:block" />
+      <Leaf position="top-left" size={28} rotation={-25} opacity={0.1} leafType="araucaria" className="text-white hidden xl:block" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-8 border-b border-white/20">
           <div className="mb-8 md:mb-0">
-            <img 
-              src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" 
-              alt="Maranjá" 
-              className="h-16 mb-4 invert"
-            />
-            <p className="max-w-xs text-white/70 mb-6">
-              Soluções de marketing e automação para clínicas que desejam crescer e otimizar processos.
-            </p>
+            <img src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" alt="Maranjá" className="h-16 mb-4 invert" />
+            <p className="max-w-xs text-white/70 mb-6">Soluções de marketing e automação para empresas que desejam crescer e otimizar processos.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-white/80" aria-label="Facebook">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -102,13 +57,9 @@ const Footer = () => {
             
             <div className="col-span-2 md:col-span-1">
               <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-              <p className="text-white/70 mb-4">Receba novidades sobre marketing para clínicas</p>
+              <p className="text-white/70 mb-4">Receba novidades sobre marketing seu negócio</p>
               <div className="flex space-x-2">
-                <Input 
-                  type="email" 
-                  placeholder="Seu email" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                />
+                <Input type="email" placeholder="Seu email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
                 <Button type="submit" className="bg-white text-maranja-darkblue hover:bg-white/90">
                   Enviar
                 </Button>
@@ -121,8 +72,6 @@ const Footer = () => {
           <p>&copy; {currentYear} Maranjá | Todos os direitos reservados</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

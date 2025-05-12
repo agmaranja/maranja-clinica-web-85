@@ -62,7 +62,7 @@ const Services = () => {
                 <CardTitle className="text-maranja-darkblue text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-maranja-darkblue/70 text-base">
+                <CardDescription className="">
                   {service.description}
                 </CardDescription>
               </CardContent>
