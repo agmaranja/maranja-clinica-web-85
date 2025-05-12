@@ -66,7 +66,8 @@ export default {
 				maranja: {
 					beige: '#f5f0e5',
 					darkblue: '#1d2d35',
-					cream: '#faf6ee'
+					cream: '#faf6ee',
+					background: '#ECE4D5'
 				}
 			},
 			borderRadius: {
@@ -76,7 +77,8 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Montserrat', 'sans-serif'],
-				heading: ['Cormorant Garamond', 'serif']
+				heading: ['Cormorant Garamond', 'serif'],
+				lato: ['Lato', 'sans-serif']
 			},
 			keyframes: {
 				'accordion-down': {
