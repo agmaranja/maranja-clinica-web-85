@@ -2,12 +2,17 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
+import { Phone } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToContactForm = () => {
+    document.getElementById("ligue-para-mim")?.scrollIntoView({behavior: "smooth"});
   };
 
   return (
@@ -35,7 +40,10 @@ const Header = () => {
           <a href="#contato" className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
             Contato
           </a>
-          <Button className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white">
+          <Button 
+            className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white py-2 px-4 ml-2" 
+            onClick={scrollToContactForm}
+          >
             Ligue para mim
           </Button>
         </nav>
@@ -92,7 +100,7 @@ const Header = () => {
               Contato
             </a>
             <Button 
-              className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full justify-center"
+              className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full justify-center py-2"
               onClick={() => {
                 toggleMenu();
                 document.getElementById("ligue-para-mim")?.scrollIntoView({behavior: "smooth"});

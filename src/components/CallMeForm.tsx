@@ -5,12 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, WhatsApp } from "lucide-react";
 import Leaf from "@/components/Leaf";
+
 const CallMeForm = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
@@ -18,23 +17,50 @@ const CallMeForm = () => {
     email: "",
     mensagem: ""
   });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulando envio do formulário
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      // Preparando os dados para o envio
+      const emailContent = `
+        Nome: ${formData.nome}
+        Telefone: ${formData.telefone}
+        Email: ${formData.email}
+        Mensagem: ${formData.mensagem}
+      `;
+
+      // Simulando o envio de email - em um ambiente real, isso seria uma chamada de API
+      console.log("Enviando email para agmaranja@gmail.com");
+      console.log("Conteúdo:", emailContent);
+
+      // Em um ambiente real, você implementaria uma chamada a um serviço de email aqui
+      // Por exemplo:
+      // await fetch('/api/send-email', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     to: 'agmaranja@gmail.com',
+      //     subject: `Contato do site - ${formData.nome}`,
+      //     text: emailContent
+      //   }),
+      // });
+
+      // Simulando o tempo de envio
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Exibir toast de sucesso
       toast({
         title: "Formulário enviado!",
         description: "Entraremos em contato em breve.",
@@ -48,9 +74,21 @@ const CallMeForm = () => {
         email: "",
         mensagem: ""
       });
-    }, 1000);
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      toast({
+        title: "Erro ao enviar formulário",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+        duration: 5000
+      });
+    } finally {
+      setLoading(false);
+    }
   };
-  return <section id="ligue-para-mim" className="py-16 md:py-24 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
+
+  return (
+    <section id="ligue-para-mim" className="py-16 md:py-24 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
       <Leaf position="top-right" size={42} rotation={15} opacity={0.2} leafType="jatoba" className="z-10" />
       <Leaf position="bottom-left" size={36} rotation={-10} opacity={0.25} leafType="ipe" className="z-10" />
       <Leaf position="center-right" size={28} rotation={28} opacity={0.15} leafType="araucaria" className="hidden md:block z-10" />
@@ -75,34 +113,82 @@ const CallMeForm = () => {
                   <Label htmlFor="nome" className="text-maranja-darkblue">
                     Nome
                   </Label>
-                  <Input id="nome" name="nome" value={formData.nome} onChange={handleChange} placeholder="Seu nome completo" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Input 
+                    id="nome" 
+                    name="nome" 
+                    value={formData.nome} 
+                    onChange={handleChange} 
+                    placeholder="Seu nome completo" 
+                    required 
+                    className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" 
+                  />
                 </div>
                 
                 <div className="grid gap-2">
                   <Label htmlFor="telefone" className="text-maranja-darkblue">
                     Telefone
                   </Label>
-                  <Input id="telefone" name="telefone" type="tel" value={formData.telefone} onChange={handleChange} placeholder="(00) 00000-0000" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Input 
+                    id="telefone" 
+                    name="telefone" 
+                    type="tel" 
+                    value={formData.telefone} 
+                    onChange={handleChange} 
+                    placeholder="(00) 00000-0000" 
+                    required 
+                    className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" 
+                  />
                 </div>
                 
                 <div className="grid gap-2">
                   <Label htmlFor="email" className="text-maranja-darkblue">
                     E-mail
                   </Label>
-                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="seu@email.com" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Input 
+                    id="email" 
+                    name="email" 
+                    type="email" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    placeholder="seu@email.com" 
+                    required 
+                    className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" 
+                  />
                 </div>
                 
                 <div className="grid gap-2">
                   <Label htmlFor="mensagem" className="text-maranja-darkblue">
                     Mensagem (opcional)
                   </Label>
-                  <Textarea id="mensagem" name="mensagem" value={formData.mensagem} onChange={handleChange} placeholder="Como podemos ajudar o seu negócio?" className="min-h-[120px] border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Textarea 
+                    id="mensagem" 
+                    name="mensagem" 
+                    value={formData.mensagem} 
+                    onChange={handleChange} 
+                    placeholder="Como podemos ajudar o seu negócio?" 
+                    className="min-h-[120px] border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" 
+                  />
                 </div>
               </div>
               
-              <Button type="submit" className="w-full bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white" disabled={loading}>
-                {loading ? "Enviando..." : "Solicitar contato"}
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button 
+                  type="submit" 
+                  className="flex-1 bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white" 
+                  disabled={loading}
+                >
+                  {loading ? "Enviando..." : "Solicitar contato"}
+                </Button>
+                
+                <Button 
+                  type="button" 
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white gap-2" 
+                  onClick={() => window.open("https://api.whatsapp.com/send?phone=5511982404879", "_blank")}
+                >
+                  <WhatsApp className="h-5 w-5" />
+                  <span>WhatsApp</span>
+                </Button>
+              </div>
             </form>
             
             <div className="mt-8 pt-6 border-t border-maranja-darkblue/10">
@@ -120,6 +206,8 @@ const CallMeForm = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CallMeForm;
