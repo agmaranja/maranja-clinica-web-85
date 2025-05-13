@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
@@ -23,7 +22,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/ab03f245-a6d5-422f-b497-d8921ebe72ea.png" 
+            src="/maranja-clinica-web-85/header-logo.png" 
             alt="Maranjá" 
             className="h-12 md:h-16"
           />

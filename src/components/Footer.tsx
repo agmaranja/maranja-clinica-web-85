@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Leaf from "@/components/Leaf";
@@ -14,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-8 border-b border-white/20">
           <div className="mb-8 md:mb-0">
-            <img src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" alt="Maranjá" className="h-16 mb-4 invert" />
+            <img src="/maranja-clinica-web-85/footer-logo.png" alt="Maranjá" className="h-16 mb-4 invert" />
             <p className="max-w-xs text-white/70 mb-6">Soluções de marketing e automação para empresas que desejam crescer e otimizar processos.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-white/80" aria-label="Facebook">

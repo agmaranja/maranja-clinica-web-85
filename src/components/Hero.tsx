@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
 const Hero = () => {
@@ -55,7 +54,7 @@ const Hero = () => {
             <Leaf position="top-right" size={24} rotation={10} opacity={0.25} leafType="palm" className="absolute top-0 right-12" />
             <Leaf position="bottom-left" size={20} rotation={-15} opacity={0.2} leafType="trees" className="absolute bottom-10 left-6 hidden md:block" />
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <img src="/lovable-uploads/50f07d24-de5a-4a93-83dc-bab13718a7cf.png" alt="Maranjá Logo" className="w-full h-full object-contain" />
+              <img src="/maranja-clinica-web-85/hero-logo.png" alt="Maranjá Logo" className="w-full h-full object-contain scale-108" />
             </div>
           </div>
         </div>
