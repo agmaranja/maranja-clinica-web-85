@@ -5,8 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Phone, Mail, WhatsApp } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import Leaf from "@/components/Leaf";
+import { sendContactEmail } from "@/utils/emailService";
 
 const CallMeForm = () => {
   const { toast } = useToast();
@@ -31,49 +32,27 @@ const CallMeForm = () => {
     setLoading(true);
 
     try {
-      // Preparando os dados para o envio
-      const emailContent = `
-        Nome: ${formData.nome}
-        Telefone: ${formData.telefone}
-        Email: ${formData.email}
-        Mensagem: ${formData.mensagem}
-      `;
+      // Send email using our email service
+      const success = await sendContactEmail(formData);
 
-      // Simulando o envio de email - em um ambiente real, isso seria uma chamada de API
-      console.log("Enviando email para agmaranja@gmail.com");
-      console.log("Conteúdo:", emailContent);
+      if (success) {
+        // Exibir toast de sucesso
+        toast({
+          title: "Formulário enviado!",
+          description: "Entraremos em contato em breve.",
+          duration: 5000
+        });
 
-      // Em um ambiente real, você implementaria uma chamada a um serviço de email aqui
-      // Por exemplo:
-      // await fetch('/api/send-email', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     to: 'agmaranja@gmail.com',
-      //     subject: `Contato do site - ${formData.nome}`,
-      //     text: emailContent
-      //   }),
-      // });
-
-      // Simulando o tempo de envio
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // Exibir toast de sucesso
-      toast({
-        title: "Formulário enviado!",
-        description: "Entraremos em contato em breve.",
-        duration: 5000
-      });
-
-      // Limpar formulário
-      setFormData({
-        nome: "",
-        telefone: "",
-        email: "",
-        mensagem: ""
-      });
+        // Reset form
+        setFormData({
+          nome: "",
+          telefone: "",
+          email: "",
+          mensagem: ""
+        });
+      } else {
+        throw new Error("Falha ao enviar email");
+      }
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       toast({
@@ -185,7 +164,12 @@ const CallMeForm = () => {
                   className="flex-1 bg-green-600 hover:bg-green-700 text-white gap-2" 
                   onClick={() => window.open("https://api.whatsapp.com/send?phone=5511982404879", "_blank")}
                 >
-                  <WhatsApp className="h-5 w-5" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+                    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                    <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                    <path d="M9.5 13.5c.5 1.5 2.5 1.5 3 0" />
+                  </svg>
                   <span>WhatsApp</span>
                 </Button>
               </div>
