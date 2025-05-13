@@ -1,32 +1,50 @@
 
-# Maranjá - Marketing e Automação para Empresas
+# Maranjá - Site Estático
 
-Este é o site da Maranjá, uma agência especializada em marketing e automação para empresas.
+Este é o código HTML e CSS para o site estático da Maranjá, uma empresa de marketing e automação.
 
-## Estrutura do Projeto
+## Estrutura de arquivos
 
-Este projeto foi convertido de React para HTML e CSS estático para hospedagem direta.
+- `index.html` - Arquivo HTML principal
+- `styles.css` - Arquivo de estilos CSS
+- `/images` - Pasta para armazenar imagens
 
-- `index.html` - Página principal do site
-- `styles.css` - Estilos do site
-- `images/` - Diretório para imagens
+## Imagens necessárias
 
-## Como Usar
+Para que o site funcione corretamente, você deve adicionar as seguintes imagens na pasta `/images`:
 
-Para executar o site localmente, simplesmente abra o arquivo `index.html` em seu navegador.
+- `logo.png` - Logo principal da Maranjá (fundo transparente)
+- `logo-hero.png` - Logo utilizado na seção hero
+- `logo-white.png` - Versão branca do logo para o rodapé
 
-## Imagens
+## Hospedagem
 
-Para que o site funcione corretamente, as seguintes imagens devem ser adicionadas à pasta `images/`:
+Para hospedar este site:
 
-1. `logo.png` - Logo principal da Maranjá
-2. `logo-hero.png` - Logo para a seção Hero
-3. `logo-white.png` - Logo branco para o rodapé
+1. Faça upload de todos os arquivos para o servidor de hospedagem
+2. Mantenha a estrutura de pastas intacta
+3. Certifique-se que o arquivo index.html está na raiz do diretório
 
-## Personalização
+## Fontes utilizadas
 
-Para personalizar o site:
+O site utiliza as seguintes fontes do Google Fonts:
+- Montserrat (300, 400, 500, 600, 700)
+- Cormorant Garamond (400, 500, 600, 700)
+- Lato (300, 400, 700, 900)
 
-1. Edite o arquivo `index.html` para modificar a estrutura
-2. Ajuste os estilos no arquivo `styles.css`
-3. Substitua as imagens conforme necessário
+As fontes já estão sendo carregadas via link no arquivo HTML.
+
+## Responsividade
+
+O site é totalmente responsivo e se adapta a diferentes tamanhos de tela:
+- Mobile: < 640px
+- Tablet: 640px - 768px
+- Desktop: > 768px
+
+## Funcionalidades JavaScript
+
+O site inclui as seguintes funcionalidades JavaScript:
+- Menu móvel (hambúrguer)
+- Formulário de contato com validação básica
+- Atualização automática do ano no rodapé
+- Rolagem suave para links internos
