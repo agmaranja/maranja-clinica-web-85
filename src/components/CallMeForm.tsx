@@ -150,10 +150,10 @@ const CallMeForm = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Button 
                   type="submit" 
-                  className="flex-1 bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white" 
+                  className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full" 
                   disabled={loading}
                 >
                   {loading ? "Enviando..." : "Solicitar contato"}
@@ -161,15 +161,17 @@ const CallMeForm = () => {
                 
                 <Button 
                   type="button" 
-                  className="flex-1 bg-green-600 hover:bg-green-700 text-white gap-2" 
+                  className="bg-green-600 hover:bg-green-700 text-white gap-2 w-full" 
                   onClick={() => window.open("https://api.whatsapp.com/send?phone=5511982404879", "_blank")}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-                    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-                    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
-                    <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
-                    <path d="M9.5 13.5c.5 1.5 2.5 1.5 3 0" />
-                  </svg>
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                      <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                      <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                      <path d="M9.5 13.5c.5 1.5 2.5 1.5 3 0" />
+                    </svg>
+                  </div>
                   <span>WhatsApp</span>
                 </Button>
               </div>
